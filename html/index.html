@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Image Garelly</title>
+        <link rel="stylesheet" type"test/css" href="mystyle.css">
+    </head>
+    <body>
+        <div id="header">
+          <h1 id="title">Trip' in Greece </h1>
+        </div>
+
+        <div id="container">
+          <!-- <p>サムネールをソートするボタンを作る</p> -->
+
+          <div id="navigation">
+            <div class="navi-item">
+              <a href="#">All Category</a>
+            </div>
+            <div class="navi-item">
+              <a href="#">Street Art</a>
+            </div>
+            <div class="navi-item">
+              <a href="#">Nature</a>
+            </div>
+            <div class="navi-item">
+              <a href="#">Architecture</a>
+            </div>
+          </div>
+
+          <!-- サムネールを表示する -->
+          <ul id="photos">
+                <li id ="photo1"><img src="img/rgc1.jpeg" width="350px""100px"></li>
+                <li id ="photo2"><img src="img/rgc2.jpeg" width="350px"></li>
+                <li id ="photo3"><img src="img/rgc3.jpeg" width="350px"></li>
+                <li id ="photo4"><img src="img/rgc4.jpeg"></li>
+          </ul>
+          <div id="photo_placeholder">
+          </div>
+
+        </div>
+      <script>
+
+
+          var title_elm = document.getElementById('title');
+          var photo_placeholder = document.getElementById('photo_placeholder');
+          var name = 'kazu';
+          var message = 'hello ' + name + '\'s' + 'Photo Book';
+          var photo1 = document.getElementById('photo1');
+          var photos = document.querySelectorAll('#photos li');
+          console.log(photos);
+
+          function showPhoto(e){
+              // alert('hello function');
+              console.log(e.currentTarget.innerHTML);
+              // title_elm.style.backgroundColor= 'pink';
+              photo_placeholder.innerHTML = e.currentTarget.innerHTML;
+
+
+
+
+          };
+
+          title_elm.style.textDecoration= 'underline';
+
+
+          title_elm.innerHTML = message;
+          // alert('hello '+name + Date.now());
+
+          for(var i = 0; i<4; i++){
+            console.log(photos[i]);
+
+
+            photos[i].addEventListener("click", function(event){
+              showPhoto(event)
+
+            });
+          }
+
+          // photo1.addEventListener("click", showPhoto);
+
+
+
+
+
+      </script>
+    </body>
+</html>
